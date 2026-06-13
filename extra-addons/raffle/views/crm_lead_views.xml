@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View crm.lead form -->
+    <record id="view_fields_crm_lead_form" model="ir.ui.view">
+        <field name="name">view_fields_crm_lead_form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//group[@name='opportunity_partner']//field[@name='partner_id']" position="after">
+                <field name="new_development"/>
+                <field name="matter"/>
+            </xpath>
+            <notebook position="inside">
+                <page string="Pagos">
+                    <group string="Información asociada con los pagos">
+                    
+                        <field name="first_payment" />
+
+                        <field name="honorarium" />
+
+                        <field name="honorarium_two_proposal" />
+                        
+                        <field name="currency_id" required="1"/>
+
+                        <field name="quantity_payment" invisible="0 == honorarium_two_proposal " />
+
+                        <field name="number_to_words" />
+
+                      
+                    </group>
+                      <group string="Montos del pago">
+                            <field name="one_payment" invisible="'1' > quantity_payment "/>
+                            <field name="second_payment" invisible="'2' > quantity_payment "/>
+                            <field name="three_payment" invisible="'3' > quantity_payment "/>
+                            <field name="four_payment" invisible="'4' > quantity_payment "/>
+                            <field name="five_payment" invisible="'5' > quantity_payment "/>
+                        </group>
+                        <group string="Fechas de pago">
+                            <field name="three_payment_date" invisible="'3' > quantity_payment "/>
+                            <field name="four_payment_date" invisible="'4' > quantity_payment "/>
+                            <field name="five_payment_date" invisible="'5' > quantity_payment "/>
+                        </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+
+    <!-- View crm.lead tree -->
+    <record id="view_fields_crm_lead_tree" model="ir.ui.view">
+        <field name="name">view_fields_crm_lead_tree</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="new_development"/>
+                <field name="matter"/>
+            </xpath>
+        </field>
+    </record>
+     <!-- View crm.lead tree -->
+    <function model="ir.model.fields" name="formbuilder_whitelist">
+        <value>crm.lead</value>
+        <value eval="['new_development', 'matter']"/>
+    </function>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='reject_wizard_form' model='ir.ui.view'>
+        <field name='name'>Rechazar oportunidad de reclutamiento</field>
+        <field name='model'>hr_reject_reason</field>
+        <field name='arch' type='xml'>
+            <form name="Rechazar oportunidad de reclutamiento">
+                <sheet>
+                    <group>
+                        <field name='reason'></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_reject_opportunity" name= "Rechazar oportunidad de reclutamiento" res_model="hr_reject_reason" view_mode="form" target="new" />
+</odoo>

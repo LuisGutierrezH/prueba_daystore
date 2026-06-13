@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_raffle_history_tree" model="ir.ui.view">
+        <field name="name">raffle.history.tree</field>
+        <field name="model">raffle.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="winner_id"/>
+                <field name="product_id"/>
+            </tree>
+        </field>
+    </record>
+        <record id="view_raffle_history_form" model="ir.ui.view">
+        <field name="name">raffle.history.form</field>
+        <field name="model">raffle.history</field>
+        <field name="arch" type="xml">
+            <form string="Histórico de Sorteos">
+                <sheet>
+
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="date" readonly="1"/>
+                        </group>
+
+                        <group>
+                            <field name="winner_id" readonly="1"/>
+                            <field name="product_id" readonly="1"/>
+                        </group>
+
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+        <record id="view_raffle_history_search" model="ir.ui.view">
+        <field name="name">raffle.history.search</field>
+        <field name="model">raffle.history</field>
+        <field name="arch" type="xml">
+            <search>
+
+                <field name="winner_id"/>
+                <field name="product_id"/>
+
+                <group expand="0" string="Agrupar por">
+
+                    <filter string="Ganador"
+                              name="group_winner"
+                              context="{'group_by':'winner_id'}"/>
+
+                    <filter string="Premio"
+                              name="group_product"
+                              context="{'group_by':'product_id'}"/>
+
+                </group>
+
+            </search>
+        </field>
+    </record>
+        <record id="action_raffle_history"
+            model="ir.actions.act_window">
+
+        <field name="name">Histórico de Sorteos</field>
+        <field name="res_model">raffle.history</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+        <menuitem id="menu_raffle_history"
+              name="Histórico"
+              parent="menu_raffle_root"
+              action="action_raffle_history"
+              sequence="10"/>
+
+</odoo>

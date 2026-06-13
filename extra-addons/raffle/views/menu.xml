@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- App Sorteo -->
+    <menuitem id="menu_raffle_root"
+              name="Sorteo Mundialista"
+              sequence="50"/>
+
+</odoo>

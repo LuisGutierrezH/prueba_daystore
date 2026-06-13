@@ -1,19 +1,19 @@
 version: '3.7'
 services:
-  odoo_alejandria:
-    container_name: odoo_alejandria
+  odoo_daystore:
+    container_name: odoo_daystore
     image: odoo:17.0
     restart: always
     depends_on:
-      - db_alejandria
+      - db_daystore
     ports:
       - 8069:8069
     volumes:
       - ./volumes/odoo-data:/var/lib/odoo
       - ./odoo/config/local.conf:/etc/odoo/odoo.conf
       - ./extra-addons:/mnt/extra-addons
-  db_alejandria:
-    container_name: db_alejandria
+  db_daystore:
+    container_name: db_daystore
     image: postgres:15
     restart: always
     environment:
