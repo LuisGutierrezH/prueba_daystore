@@ -11,7 +11,7 @@
         "views/product_template.xml",
         "views/menu.xml",
         "views/raffle_history.xml",
-        #"wizard/raffle_wizard_views.xml",
+        "wizard/raffle_wizard.xml",
     ],
     'application': True,
     'installable': True,

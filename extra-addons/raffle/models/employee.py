@@ -11,5 +11,5 @@ class Employee(models.Model):
 
     _inherit = ["hr.employee"]
     
-    #Campo de tipo entero y solo lectura
+    # Campo para almacenar las monedas de cada empleado
     coins = fields.Integer(string="Monedas", readonly=True)

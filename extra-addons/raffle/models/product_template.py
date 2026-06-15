@@ -9,6 +9,7 @@ _logger = logging.getLogger(__name__)
 
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
-
+    
+    # Campos nuevos para el módulo de tómbola
     raffle_coin_value = fields.Integer(string='Monedas necesarias', required=False)
     is_souvenir = fields.Boolean(string='Souvenir', default=False)
