@@ -68,7 +68,7 @@
     </record>
 
 
-    <!-- Esto enlaza el clic del menú directamente con tu función de Python -->
+    <!-- Clic en menú detona función -->
     <record id="action_server_lanzar_tombola" model="ir.actions.server">
         <field name="name">Lanzar Tómbola desde Menú</field>
         <field name="model_id" ref="model_raffle_history"/>
