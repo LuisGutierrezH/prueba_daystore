@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- 1. VISTA DE LISTA (TREE) DEL HISTORIAL -->
+    <!-- VISTA DE LISTA (TREE) DEL HISTORIAL -->
     <record id="view_raffle_history_tree" model="ir.ui.view">
         <field name="name">raffle.history.tree</field>
         <field name="model">raffle.history</field>
@@ -14,7 +14,7 @@
         </field>
     </record>
 
-    <!-- 2. VISTA FORMULARIO DEL HISTORIAL -->
+    <!-- VISTA FORMULARIO DEL HISTORIAL -->
     <record id="view_raffle_history_form" model="ir.ui.view">
         <field name="name">raffle.history.form</field>
         <field name="model">raffle.history</field>
@@ -42,7 +42,7 @@
         </field>
     </record>
 
-    <!-- 3. VISTA DE BÚSQUEDA -->
+    <!-- VISTA DE BÚSQUEDA -->
     <record id="view_raffle_history_search" model="ir.ui.view">
         <field name="name">raffle.history.search</field>
         <field name="model">raffle.history</field>
@@ -71,10 +71,9 @@
     <!-- Esto enlaza el clic del menú directamente con tu función de Python -->
     <record id="action_server_lanzar_tombola" model="ir.actions.server">
         <field name="name">Lanzar Tómbola desde Menú</field>
-        <field name="model_id" ref="model_raffle_history"/> <!-- Apunta al modelo raffle.history -->
+        <field name="model_id" ref="model_raffle_history"/>
         <field name="state">code</field>
         <field name="code">
-# Este código ejecuta tu función Python al pulsar el menú
 action = model.action_menu_lanzar_tombola()
         </field>
     </record>

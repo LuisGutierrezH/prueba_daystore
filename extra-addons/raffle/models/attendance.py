@@ -20,7 +20,6 @@ class Attendance(models.Model):
 
     def create(self, vals):
         attendance = super().create(vals)
-        # Dar monedas al hacer check-in (creation).
         attendance._given_coins(10)
         return attendance
 
